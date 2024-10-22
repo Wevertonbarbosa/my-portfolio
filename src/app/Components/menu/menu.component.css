@@ -1,0 +1,23 @@
+[tuiPin] {
+  position: relative;
+
+}
+
+[tuiPin]._open {
+  margin-top: -3.75rem;
+}
+
+.box {
+  block-size: 7.75rem;
+  width: 100%;
+}
+
+.resumo {
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+
+}
+
