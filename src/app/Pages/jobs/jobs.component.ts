@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { PreviewComponent } from './Components/preview/preview.component';
+import { TuiAppearance, TuiButton, TuiSurface } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [],
+  imports: [PreviewComponent, TuiAppearance, TuiButton, TuiSurface],
   templateUrl: './jobs.component.html',
-  styleUrl: './jobs.component.css'
+  styleUrl: './jobs.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class JobsComponent {
-
-}
+export class JobsComponent {}

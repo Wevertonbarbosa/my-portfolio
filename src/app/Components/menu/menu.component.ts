@@ -8,12 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 import { WA_WINDOW } from '@ng-web-apis/common';
 
-import {
-  tuiAsPortal,
-  TuiPortals,
-  TuiRepeatTimes,
-  TuiThemeColorService,
-} from '@taiga-ui/cdk';
+import { tuiAsPortal, TuiPortals, TuiRepeatTimes } from '@taiga-ui/cdk';
 import {
   TuiAppearance,
   TuiButton,
@@ -23,7 +18,7 @@ import {
   TuiScrollbar,
   TuiTitle,
   TuiAlertService,
-  TuiSurface
+  TuiSurface,
 } from '@taiga-ui/core';
 
 import {
@@ -38,12 +33,15 @@ import {
   TuiPin,
 } from '@taiga-ui/kit';
 import { TuiCardLarge, TuiHeader, TuiNavigation } from '@taiga-ui/layout';
-
+import { JobsComponent } from '../../Pages/jobs/jobs.component';
+import { CommonModule } from '@angular/common';
+import { ExperienceComponent } from "../../Pages/experience/experience.component";
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [
     FormsModule,
+    CommonModule,
     TuiAvatar,
     TuiScrollbar,
     TuiAppearance,
@@ -64,7 +62,9 @@ import { TuiCardLarge, TuiHeader, TuiNavigation } from '@taiga-ui/layout';
     TuiLike,
     TuiPin,
     TuiTitle,
-  ],
+    JobsComponent,
+    ExperienceComponent
+],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -77,7 +77,6 @@ export class MenuComponent extends TuiPortals {
   protected c = true;
   protected d = false;
   private readonly alerts = inject(TuiAlertService);
-  protected color = false;
   private readonly win = inject(WA_WINDOW);
 
   constructor() {
@@ -94,13 +93,15 @@ export class MenuComponent extends TuiPortals {
 
   protected showNotification(): void {
     this.alerts
-      .open(
-        '<i>Me mande uma mensagem!</i>',
-        {
-          label: 'Obrigado por curtir!',
-          appearance: 'success',
-        }
-      )
+      .open('<i>Me mande uma mensagem!</i>', {
+        label: 'Obrigado por curtir!',
+        appearance: 'success',
+      })
       .subscribe();
+  }
+
+  public currentPage = 1;
+  changePage(value: number): void {
+    this.currentPage = value;
   }
 }

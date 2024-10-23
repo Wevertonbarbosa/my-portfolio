@@ -1,0 +1,20 @@
+<tui-carousel [draggable]="true" [itemsCount]="itemsCount" class="p-3" [(index)]="index">
+  <ng-container *ngFor="let item of items">
+    <button *tuiItem tuiCardLarge tuiSurface="floating"
+      class="item d-flex align-items-center flex-column p-0" type="button">
+
+
+      <iframe [src]="item.content" height="316" style="width: 100%;" allowfullscreen lazyload frameborder="0"
+        allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin">
+      </iframe>
+
+      <aside class="p-3">
+        <input tuiLike="var(--tui-status-negative)" type="checkbox" />
+      </aside>
+    </button>
+  </ng-container>
+</tui-carousel>
+
+
+<tui-pagination size="l" class="tui-space_top-4 p-4" [index]="rounded" [length]="items.length / itemsCount"
+  (indexChange)="onIndex($event)" />

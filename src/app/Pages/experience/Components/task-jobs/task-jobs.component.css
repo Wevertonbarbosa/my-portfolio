@@ -1,0 +1,16 @@
+.cardEmpresa {
+  padding: 0.75rem;
+  background: var(--tui-background-base-alt);
+  block-size: 8rem;
+
+  &:hover::after {
+    transform: scale(1.1);
+  }
+}
+
+.cardEmpresa {
+  &::after {
+    background: url("../../../../assets/icons/iconeTotvs.webp") bottom right no-repeat;
+    background-size: 50%;
+  }
+}

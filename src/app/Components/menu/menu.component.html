@@ -55,20 +55,20 @@
 
   <nav tuiNavigationNav class="pt-0" [style.position]="'sticky'" style="overflow: visible;">
     <tui-tabs>
-      <button tuiTab type="button">
+      <button tuiTab type="button" (click)="changePage(1)">
         Meus trabalhos
       </button>
-      <button tuiTab type="button">
+      <button tuiTab type="button" (click)="changePage(2)">
         Experiência
       </button>
-      <button tuiTab type="button">
+      <button tuiTab type="button" (click)="changePage(3)">
         Freelancer
       </button>
-      <button tuiTab type="button">
+      <button tuiTab type="button" (click)="changePage(4)">
         Educação
       </button>
 
-      <button tuiTab type="button">
+      <button tuiTab type="button" (click)="changePage(5)">
         Contato
       </button>
 
@@ -81,12 +81,12 @@
     </button>
   </nav>
 
-  <div tuiAppearance="floating">
-
+  <div tuiAppearance="floating" class="p-3 containerPages">
 
 
     <!-- CRIAR OS CONTEUDOS DAS PÁGINAS AQUI, COMPONENTES SEPARADOS -->
-
+    <app-jobs *ngIf="currentPage === 1"></app-jobs>
+    <app-experience *ngIf="currentPage === 2"></app-experience>
 
 
 

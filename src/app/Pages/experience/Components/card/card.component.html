@@ -1,0 +1,19 @@
+<div class="container-fluid d-flex p-4 gap-1">
+
+  <div tuiAppearance="floating" class="container-fluid col-2 p-2 rounded">
+    <tui-stepper orientation="vertical" tuiConnected [(activeItemIndex)]="valueStep">
+      <button *ngFor="let step of steps" tuiStep type="button" (click)="chooseJob(valueStep)" >
+        <h6 class="textBody">{{ step }}</h6>
+      </button>
+    </tui-stepper>
+  </div>
+
+  <div tuiAppearance="floating"
+    class="container-fluid p-2 d-flex justify-content-center rounded flex-column align-items-center gap-3">
+
+    <app-task-jobs [title]="title" [date]="date" [description]="description"></app-task-jobs>
+
+
+
+  </div>
+</div>
