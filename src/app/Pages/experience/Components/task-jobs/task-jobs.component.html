@@ -1,23 +1,21 @@
 <div class="container-fluid d-flex align-items-center justify-content-center p-3">
-  <div tuiCardMedium tuiSurface class="cardEmpresa">
-    <h4 TuiTitle.size="m" class="Subheadings text-dark">
-      Totvs
-    </h4>
+  <div tuiCardMedium tuiSurface class="cardEmpresa px-2" [ngClass]="selectedClass">
+    <h5 TuiTitle.size="m" class="Subheadings text-dark">
+      {{empresa}}
+    </h5>
   </div>
 </div>
 <div class="container-fluid py-3 rounded">
-  <button tuiCardLarge tuiHeader tuiSurface="floating" type="button" class="w-100">
+  <button tuiCardLarge tuiHeader tuiSurface="floating" type="button" class="cardDescription">
     <div class="container-fluid p-3 d-flex flex-column align-items-center">
       <h5 class="Subheadings m-1" [innerHTML]="title">
       </h5>
       <span class="textMedium" [innerHTML]="date"></span>
 
-      <aside tuiAccessories>
-        <!-- <tui-avatar appearance="primary" src="@tui.star" /> -->
+      <aside tuiAccessories class="gap-0">
 
         <p class="textMedium text-body-secondary p-2" [innerHTML]="description">
         </p>
-
       </aside>
     </div>
   </button>

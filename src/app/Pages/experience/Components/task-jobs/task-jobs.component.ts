@@ -25,8 +25,8 @@ import { NgFor } from '@angular/common';
 })
 export class TaskJobsComponent {
   @Input() title: string = '';
+  @Input() empresa: string = '';
   @Input() date: string = '';
   @Input() description: string = '';
-
-
+  @Input() selectedClass: string = '';
 }

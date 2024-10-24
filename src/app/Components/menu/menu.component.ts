@@ -36,6 +36,7 @@ import { TuiCardLarge, TuiHeader, TuiNavigation } from '@taiga-ui/layout';
 import { JobsComponent } from '../../Pages/jobs/jobs.component';
 import { CommonModule } from '@angular/common';
 import { ExperienceComponent } from "../../Pages/experience/experience.component";
+import { EvaluatedComponent } from "../../Pages/evaluated/evaluated.component";
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -63,7 +64,8 @@ import { ExperienceComponent } from "../../Pages/experience/experience.component
     TuiPin,
     TuiTitle,
     JobsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    EvaluatedComponent
 ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',

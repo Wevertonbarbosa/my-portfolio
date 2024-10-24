@@ -1,0 +1,174 @@
+<div class="container-fluid p-0 rounded">
+
+  <div class="container-fluid p-3 px-0">
+    <button tuiCardLarge tuiHeader class="w-100 gap-2" tuiSurface="floating" type="button">
+      <h1 tuiTitle class="fs-4">
+        Classificações e recomendações
+        <span tuiSubtitle class="d-flex align-items-center gap-2 w-70">
+          <tui-pulse class="pe-1" />
+          <b>Desenvolvedor Front-end | Desenvolvimento Web | API REST | Interfaces UX/UI | Analista de Sistemas |
+            Angular, React.Js, TypeScript, JavaScript, Bootstrap | Experiência em Java, SQL Server, Oracle |</b>
+        </span>
+      </h1>
+
+      <aside tuiAccessories>
+
+        <a href="https://www.linkedin.com/in/wevertonbarbosa00/" target="_blank" rel="noopener noreferrer">
+          <tui-avatar appearance="outline" src="@tui.linkedin" />
+        </a>
+        <a href="https://github.com/Wevertonbarbosa/Wevertonbarbosa" target="_blank" rel="noopener noreferrer">
+          <tui-avatar appearance="glass" src="@tui.github" />
+        </a>
+      </aside>
+    </button>
+
+
+    <div class="container-fluid p-3">
+      <p class="textBody m-0" id="paragrafoDescript">
+        Meu interesse pela tecnologia se iniciou em 2021 e desde então, não parei!
+        <br>
+        <br>
+        Possuo experiência em uma das maiores empresas de tecnologia do Brasil, trouxe resultados em alguns projetos
+        como otimização do sistema ERP Protheus o maior da América latina para gestão empresarial das empresas dentro e
+        fora do Brasil.
+        <br>
+        <br>
+        Possou muitos projetos significativos para empresas como Hap Vida, Microsoft LocaWeb, BRQ Digital Solutions,
+        Easy Car, e até soluções
+        para iniciativas governamentais como a catedral UNESCO.
+        Projetos que levam a resoluções de problemas através da tecnologia.
+      </p>
+    </div>
+
+  </div>
+
+
+
+  <div class="container-fluid d-flex align-items-content justify-content-center py-4">
+    <button size="l" tuiSurface appearance="outline" tuiAppearanceMode="checked" class="scale" tuiButton type="button"
+      (click)="onClick()">
+      Avaliações
+    </button>
+  </div>
+
+
+</div>
+<ng-template #header>
+  <div class="header" [ngClass]="imgSlide">
+  </div>
+</ng-template>
+<ng-template [tuiDialogOptions]="{size: 's', header: header}" [(tuiDialog)]="open">
+  <div tuiCarouselButtons class="wrapper" (touchstart.passive.stop)="(0)">
+    <button appearance="neutral" iconStart="@tui.chevron-left" tuiIconButton tuiTheme="dark" type="button"
+      class="tui-space_right-4" (click)="navigate(-1)">
+      Previous
+    </button>
+    <tui-carousel [(index)]="index">
+
+      <div *tuiItem class="contentFeedback">
+        <button tuiCardLarge tuiHeader class="w-100 px-3 py-1" tuiSurface="floating" type="button">
+          <h1 tuiTitle>
+            Novo Saque
+            <span tuiSubtitle>Empresa</span>
+          </h1>
+
+          <aside tuiAccessories>
+            <tui-avatar appearance="success" src="@tui.user-round-check" />
+          </aside>
+
+        </button>
+
+        <div class="container-fluid textBody paragrafoClient">
+          <p>"Código organizado, demonstrou conhecimento das tecnologias sugeridas, entregas rápidas. Deu pra ver que
+            ele procurou entender o projeto antes de codificar."</p>
+        </div>
+
+      </div>
+
+
+
+      <div *tuiItem class="contentFeedback">
+        <button tuiCardLarge tuiHeader class="w-100 px-3 py-1" tuiSurface="floating" type="button">
+          <h1 tuiTitle>
+            Anderson Fabiano Dums
+            <span tuiSubtitle>Cliente</span>
+          </h1>
+
+          <aside tuiAccessories>
+            <tui-avatar appearance="success" src="@tui.user-round-check" />
+          </aside>
+
+        </button>
+
+        <div class="container-fluid textBody paragrafoClient">
+          <p>"Fez o trabalho com qualidade, entrega dentro do prazo e foi de fácil acesso para ajustes."</p>
+        </div>
+
+      </div>
+      <div *tuiItem class="contentFeedback">
+        <button tuiCardLarge tuiHeader class="w-100 px-3 py-1" tuiSurface="floating" type="button">
+          <h1 tuiTitle>
+            Caio Veloso
+            <span tuiSubtitle>Faculdade</span>
+          </h1>
+
+          <aside tuiAccessories>
+            <tui-avatar appearance="success" src="@tui.user-round-check" />
+          </aside>
+
+        </button>
+
+        <div class="container-fluid textBody paragrafoClient">
+          <p>"Ótimo trabalho em equipe e muito dedicado sempre!"</p>
+        </div>
+
+      </div>
+
+      <div *tuiItem class="contentFeedback">
+        <button tuiCardLarge tuiHeader class="w-100 px-3 py-1" tuiSurface="floating" type="button">
+          <h1 tuiTitle>
+            Eric de Oliveira
+            <span tuiSubtitle>Curso</span>
+          </h1>
+
+          <aside tuiAccessories>
+            <tui-avatar appearance="success" src="@tui.user-round-check" />
+          </aside>
+
+        </button>
+
+        <div class="container-fluid textBody paragrafoClient">
+          <p>"Se você deseja alguém esforçado com foco nos objetivos pensando sempre no sucesso, essa pessoa é o
+            Weverton, sempre disposto a aprender e também disposto a lhe ajudar com o que for necessário."</p>
+        </div>
+
+
+      </div>
+
+
+    </tui-carousel>
+    <button appearance="neutral" iconStart="@tui.chevron-right" tuiIconButton tuiTheme="dark" type="button"
+      class="tui-space_left-4" (click)="navigate(1)">
+      Next
+    </button>
+  </div>
+  <div class="tui-space_top-4">
+    <label class="d-flex align-items-center justify-content-center">
+      <tui-rating [max]="5" [ngModel]="5" [readOnly]="true" />
+      <tui-icon [tuiHint]="tooltip" icon="@tui.circle-fading-plus" tuiHintDirection="top"
+        class="text-primary pointer" />
+      <ng-template #tooltip>
+        <div class="d-flex flex-column align-items-center">
+          <p class="paragrafoClient m-0">Comunicação</p>
+          <tui-rating class="rating" [max]="5" [ngModel]="5" [readOnly]="true" />
+          <p class="paragrafoClient m-0">Planejamento</p>
+          <tui-rating [max]="5" class="rating" [ngModel]="5" [readOnly]="true" />
+          <p class="paragrafoClient m-0">Qualidade</p>
+          <tui-rating [max]="5" class="rating" [ngModel]="5" [readOnly]="true" />
+        </div>
+
+      </ng-template>
+
+    </label>
+  </div>
+</ng-template>

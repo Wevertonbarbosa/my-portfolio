@@ -1,8 +1,11 @@
 <header tuiNavigationHeader>
   <span tuiNavigationLogo>
-    <tui-icon icon="@tui.monitor-smartphone" class="fs-4" />
-    <tui-icon icon="@tui.github" class="fs-4"></tui-icon>
-    <tui-icon icon="@tui.linkedin" class="text-primary fs-4"></tui-icon>
+    <a href="https://github.com/Wevertonbarbosa/Wevertonbarbosa" target="_blank" rel="noopener noreferrer">
+      <tui-icon icon="@tui.github" class="fs-3 text-light"></tui-icon>
+    </a>
+    <a href="https://www.linkedin.com/in/wevertonbarbosa00/" target="_blank" rel="noopener noreferrer">
+      <tui-icon icon="@tui.linkedin" class="text-primary fs-3"></tui-icon>
+    </a>
   </span>
   <hr />
 
@@ -23,6 +26,7 @@
         <h1 tuiTitle class="p-1">
           Hey, eu sou Weverton Lima!
         </h1>
+        
         <tui-scrollbar class="box w-100">
           <div class="content text-dark px-2 " tuiSubtitle style="-webkit-line-clamp:inherit;">
             <p class="textMedium resumo text-body-secondary">
@@ -53,7 +57,8 @@
     </h1>
   </header>
 
-  <nav tuiNavigationNav class="pt-0" [style.position]="'sticky'" style="overflow: visible;">
+  <nav tuiNavigationNav class="p-3 pb-0" [style.position]="'sticky'" style="overflow: visible;"
+    tuiAppearance="floating">
     <tui-tabs>
       <button tuiTab type="button" (click)="changePage(1)">
         Meus trabalhos
@@ -62,12 +67,11 @@
         Experiência
       </button>
       <button tuiTab type="button" (click)="changePage(3)">
-        Freelancer
+        Avaliações
       </button>
       <button tuiTab type="button" (click)="changePage(4)">
         Educação
       </button>
-
       <button tuiTab type="button" (click)="changePage(5)">
         Contato
       </button>
@@ -87,7 +91,7 @@
     <!-- CRIAR OS CONTEUDOS DAS PÁGINAS AQUI, COMPONENTES SEPARADOS -->
     <app-jobs *ngIf="currentPage === 1"></app-jobs>
     <app-experience *ngIf="currentPage === 2"></app-experience>
-
+    <app-evaluated *ngIf="currentPage === 3"></app-evaluated>
 
 
   </div>
