@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  HostListener,
+} from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgFor } from '@angular/common';
 import { TuiSwipe } from '@taiga-ui/cdk';
@@ -44,8 +49,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./preview.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PreviewComponent {
+export class PreviewComponent implements OnInit {
   protected index = 0;
+  protected itemsCount = 3;
+  protected sizePagination: 's' | 'm' | 'l' = 'l';
   protected readonly items: {
     title: string;
     content: SafeResourceUrl;
@@ -53,6 +60,9 @@ export class PreviewComponent {
   }[] = [];
   protected value = [];
 
+  ngOnInit(): void {
+    this.updateItemsCount(window.innerWidth); // Ajusta o valor inicial de itemsCount
+  }
   constructor(private sanitizer: DomSanitizer) {
     this.items = [
       {
@@ -135,7 +145,23 @@ export class PreviewComponent {
     ];
   }
 
-  protected readonly itemsCount = 3;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.updateItemsCount(event.target.innerWidth);
+  }
+
+  private updateItemsCount(width: number): void {
+    if (width <= 768) {
+      this.itemsCount = 1;
+      this.sizePagination = 's';
+    } else if (width <= 1024) {
+      this.itemsCount = 2;
+      this.sizePagination = 'm';
+    } else if (width <= 1100) {
+      this.itemsCount = 3;
+      this.sizePagination = 'l';
+    }
+  }
 
   protected get rounded(): number {
     return Math.floor(this.index / this.itemsCount);

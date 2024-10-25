@@ -1,1 +1,46 @@
-<p>contact works!</p>
+<div class="container-fluid p-3 rounded">
+
+  <div tuiAppearance="floating"
+    class="container-fluid d-flex justify-content-center align-items-center flex-column p-4 w-100 gap-3">
+    <h3 class="textMedium">Mande sua mensagem!</h3>
+
+    <form class="w-75 d-flex flex-column justify-content-center align-items-center gap-3" [formGroup]="formSend">
+
+      <tui-input class="textMedium w-100" tuiHintContent="Nome é obrigatório e precisa de no minímo 2 caracteres!"
+        name="from_name" formControlName="from_name" [tuiTextfieldCleaner]="true"
+        [tuiTextfieldCustomContent]="formSend.get('from_name')?.valid ? success : ''">
+        Nome
+      </tui-input>
+      <ng-template #success>
+        <tui-icon icon="@tui.check" class="success tui-space_left-3" />
+      </ng-template>
+
+
+      <tui-input class="w-100" tuiHintContent="Email é obrigatório e precisa seguir formato correto!" name="from_email"
+        [tuiTextfieldCleaner]="true" formControlName="from_email"
+        [tuiTextfieldCustomContent]="formSend.get('from_email')?.valid ? success : ''">
+        Email
+      </tui-input>
+      <ng-template #success>
+        <tui-icon icon="@tui.check" class="success tui-space_left-3" />
+      </ng-template>
+
+      <tui-textarea tuiHintContent="Mande sua mensagem" [tuiTextfieldCleaner]="true" name="message"
+        formControlName="message" [tuiTextfieldCustomContent]="formSend.get('message')?.valid ? success : ''"
+        class="tui-space_bottom-4 field-large w-100">
+        Sua mensagem...
+      </tui-textarea>
+      <ng-template #success>
+        <tui-icon icon="@tui.check" class="success tui-space_left-3" />
+      </ng-template>
+
+
+      <button class="scale" size="xl" appearance="outline" tuiAppearanceMode="checked" tuiButton type="button">
+        Enviar
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

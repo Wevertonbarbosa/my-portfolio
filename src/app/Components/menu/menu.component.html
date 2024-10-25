@@ -1,29 +1,29 @@
-<header tuiNavigationHeader>
-  <span tuiNavigationLogo>
+<header tuiNavigationHeader class="contentHeader">
+  <span  tuiNavigationLogo>
     <a href="https://github.com/Wevertonbarbosa/Wevertonbarbosa" target="_blank" rel="noopener noreferrer">
-      <tui-icon icon="@tui.github" class="fs-3 text-light"></tui-icon>
+      <tui-icon icon="@tui.github" class="fs-3 text-light iconsInfo"></tui-icon>
     </a>
     <a href="https://www.linkedin.com/in/wevertonbarbosa00/" target="_blank" rel="noopener noreferrer">
-      <tui-icon icon="@tui.linkedin" class="text-primary fs-3"></tui-icon>
+      <tui-icon icon="@tui.linkedin" class="text-primary fs-3 iconsInfo"></tui-icon>
     </a>
   </span>
   <hr />
 
 </header>
 
-<main tuiNavigationMain>
+<main tuiNavigationMain class="contentMain">
   <header tuiHeader class="mb-0">
-    <h1 tuiTitle style="max-inline-size: 100% !important;" class="p-2">
+    <h1 tuiTitle style="max-inline-size: 100% !important;" class="p-2 contentResume">
       <div tuiNavigationLogo>
         <input tuiLike="var(--tui-status-negative)" (click)="showNotification()" type="checkbox" />
-        <span tuiFade>Desenvolvedor Front-End </span>
+        <span tuiFade class="textBody titleForMe">Desenvolvedor Front-End </span>
       </div>
 
       <hr class="mt-1 mb-1">
 
 
-      <div tuiAppearance="floating" tuiCardLarge tuiHeader class="d-flex flex-column gap-2">
-        <h1 tuiTitle class="p-1">
+      <div tuiAppearance="floating" tuiCardLarge tuiHeader class="d-flex flex-column gap-2 contentBIO">
+        <h1 tuiTitle class="p-1 greeting">
           Hey, eu sou Weverton Lima!
         </h1>
         <tui-scrollbar class="box w-100">
@@ -92,6 +92,6 @@
     <app-experience *ngIf="currentPage === 2"></app-experience>
     <app-evaluated *ngIf="currentPage === 3"></app-evaluated>
     <app-education *ngIf="currentPage === 4"></app-education>
-
+    <app-contact *ngIf="currentPage === 5"></app-contact>
   </div>
 </main>

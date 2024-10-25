@@ -3,3 +3,11 @@
   font-size: 0.625rem;
   inline-size: 10rem;
 }
+
+@media (max-width: 550px) {}
+
+@media(max-width: 375px) {
+  .contentCarousel {
+    padding: 5px !important;
+  }
+}

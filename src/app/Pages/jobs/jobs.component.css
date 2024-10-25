@@ -2,3 +2,15 @@
   padding: 1.25rem;
   border-radius: var(--tui-radius-l);
 }
+
+@media (max-width: 550px) {
+  .contentMain {
+    padding: 0px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .myJobs {
+    font-size: 17px;
+  }
+}
