@@ -1,0 +1,54 @@
+<div class="container-fluid d-flex flex-column align-items-center justify-content-center gap-3">
+  <div class="container-fluid d-flex justify-content-center align-items-center p-4">
+    <section tuiAppearance="floating" class="p-4 rounded d-flex flex-column align-items-center gap-3">
+      <tui-avatar size="xxl">
+        <img
+          src="https://play-lh.googleusercontent.com/-uaIzKnZGDATRaOT_DqYKdzuJTWgeeOvQeZ0XNUASysOAJaGNqkKlyVPk_tiNAZqG2Q=w240-h480-rw"
+          alt="logo fiap">
+      </tui-avatar>
+
+      <h2 class="Subheadings">FIAP</h2>
+      <h5 class="textMedium m-0">Faculdade de Informática e Administração Paulista</h5>
+      <h6 class="textMedium text-secondary">Nota máxima no MEC</h6>
+
+    </section>
+  </div>
+
+
+
+  <div class="container-fluid d-flex justify-content-center align-items-center p-3">
+
+    <button tuiCardLarge class="w-100 d-flex flex-column" tuiHeader tuiSurface="floating" type="button">
+
+      <div class="container-fluid d-flex justify-content-center flex-column align-items-center">
+        <h5 class="Subheadings">Análise e Desenvolvimento de Sistemas</h5>
+        <h6 class="textMedium text-secondary d-flex align-items-center gap-3">
+          <tui-pulse class="text-success" />
+          Início: 02/2023 - Término: 12/2024
+        </h6>
+      </div>
+
+      <div class="container-fluid p-3">
+        <table tuiTable size="m" class="table" [columns]="columns">
+
+
+          <tbody tuiTbody heading="Materias do curso" [open]="false" [data]="data">
+
+            <tr *ngFor="let item of data" tuiTr>
+
+              <td *tuiCell="'balance'" tuiTd>
+                {{ item.balance }}
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+
+    </button>
+  </div>
+
+
+</div>
