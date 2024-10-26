@@ -12,10 +12,6 @@
   width: 100%;
 }
 
-.resumo {
-  font-size: 15px;
-}
-
 .actions {
   display: flex;
 }
@@ -49,13 +45,5 @@
 @media (max-width: 375px) {
   .titleForMe {
     font-size: 18px !important;
-  }
-
-  .contentBIO {
-    padding: 20px 8px !important;
-  }
-
-  .greeting {
-    font-size: 20px !important;
   }
 }

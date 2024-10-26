@@ -14,6 +14,11 @@
 }
 
 .title {
- 
   font: var(--tui-font-heading-6);
+}
+
+@media (max-width: 1024px) {
+  .contentGif {
+    width: 100%;
+  }
 }

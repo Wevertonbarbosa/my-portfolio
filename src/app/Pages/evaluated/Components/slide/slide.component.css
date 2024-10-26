@@ -83,3 +83,27 @@
   width: 100%;
   height: 200px;
 }
+
+@media (max-width: 1024px) {
+  .buttonCard {
+    flex-direction: column-reverse;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 550px){
+  .buttonCard{
+    padding: 10px 0px !important;
+  }
+
+  .pulse{
+    display: none !important;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .contentResume{
+    padding: 15px 0px !important;
+  }
+}

@@ -20,3 +20,17 @@
     transform: scale(0.95);
   }
 }
+
+
+@media (max-width:768px) {
+  .formSendEmail {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .contentMain {
+    padding: 0px !important;
+  }
+}

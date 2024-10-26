@@ -61,7 +61,7 @@ export class PreviewComponent implements OnInit {
   protected value = [];
 
   ngOnInit(): void {
-    this.updateItemsCount(window.innerWidth); // Ajusta o valor inicial de itemsCount
+    this.updateItemsCount(window.innerWidth); 
   }
   constructor(private sanitizer: DomSanitizer) {
     this.items = [

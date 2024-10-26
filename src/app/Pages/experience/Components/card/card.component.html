@@ -1,10 +1,10 @@
-<div class="container-fluid d-flex p-4 gap-1">
+<div class="container-fluid d-flex  justify-content-center p-4 gap-1 contentCard">
 
   <div tuiAppearance="floating"
-    class="container-fluid col-2 py-4 rounded d-flex justify-content-center align-items-start">
-    <tui-stepper orientation="vertical" tuiConnected [(activeItemIndex)]="valueStep">
+    class="container-fluid col-2 py-4 rounded d-flex justify-content-center align-items-start contentStepper">
+    <tui-stepper [orientation]="orientationStepper" tuiConnected [(activeItemIndex)]="valueStep">
       <button *ngFor="let step of steps" tuiStep type="button" (click)="chooseJob(valueStep)">
-        <h6 class="textBody">{{ step }}</h6>
+        <h6 class="textBody chooseOcupation">{{ step }}</h6>
       </button>
     </tui-stepper>
   </div>

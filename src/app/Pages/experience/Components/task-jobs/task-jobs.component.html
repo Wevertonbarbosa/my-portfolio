@@ -6,16 +6,16 @@
   </div>
 </div>
 <div class="container-fluid py-3 rounded">
-  <button tuiCardLarge tuiHeader tuiSurface="floating" type="button" class="cardDescription">
-    <div class="container-fluid p-3 d-flex flex-column align-items-center">
+  <button tuiCardLarge tuiHeader  type="button" class="cardDescription">
+    <div class="container-fluid p-3 d-flex flex-column align-items-center contentScroll">
       <h5 class="Subheadings m-1" [innerHTML]="title">
       </h5>
       <span class="textMedium" [innerHTML]="date"></span>
 
-      <aside tuiAccessories class="gap-0">
+      <aside tuiAccessories class="gap-0 py-3">
+        
+        <app-text-scroll [text]="description"></app-text-scroll>
 
-        <p class="textMedium text-body-secondary p-2" [innerHTML]="description">
-        </p>
       </aside>
     </div>
   </button>

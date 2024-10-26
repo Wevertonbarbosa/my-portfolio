@@ -19,6 +19,7 @@ import { TuiCardLarge } from '@taiga-ui/layout';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TextScrollComponent } from '../../../../Components/text-scroll/text-scroll.component';
 @Component({
   selector: 'app-slide',
   standalone: true,
@@ -39,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     TuiLink,
     TuiCarousel,
     TuiPagination,
+    TextScrollComponent,
   ],
   templateUrl: './slide.component.html',
   styleUrl: './slide.component.css',

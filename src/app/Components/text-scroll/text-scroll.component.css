@@ -1,0 +1,23 @@
+.resumo {
+  font-size: 15px;
+}
+.box {
+  block-size: 7.75rem;
+  width: 100%;
+}
+
+@media (max-width: 768px){
+  .contentBIO{
+    padding: 5px 6px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .greeting {
+    font-size: 20px !important;
+  }
+
+  .contentBIO {
+    padding: 20px 8px !important;
+  }
+}

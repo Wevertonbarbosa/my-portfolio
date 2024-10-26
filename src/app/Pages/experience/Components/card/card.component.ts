@@ -1,4 +1,10 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  inject,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -35,7 +41,7 @@ import { TaskJobsComponent } from '../task-jobs/task-jobs.component';
   styleUrl: './card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   protected readonly steps = ['Freelancer', 'Totvs', 'Totvs', 'Ericsson'];
   protected readonly ocupation = [
     'Freelancer',
@@ -45,13 +51,31 @@ export class CardComponent {
   ];
   public valueStep: number = 0;
 
+  public orientationStepper: 'vertical' | 'horizontal' = 'vertical';
+
   protected empresa!: string;
   protected title!: string;
   protected date!: string;
   protected description!: string;
   public selectedClass = '';
 
-  protected descriptJobFreelas = `Fazendo ainda`;
+  protected descriptJobFreelas = `
+    Mais de 2 anos de experiência como desenvolvedor front-end, criação de interfaces UX/UI eficientes e desenvolvimento web completo incluindo integração com APIs REST, aplicações com responsividade e seguindo sempre as melhores práticas.
+    <br>
+    <br>
+    Meus clientes elogiam não só minha habilidade técnica, mas também meu comprometimento e postura colaborativa, como organização, entregas rápidas, compreensão de cada projeto, qualidade no trabalho, excelente comunicação.
+    <br>
+    <br>
+    Possuo experiencia comprovada no setor de tecnologia em uma das melhores empresas de tecnologia do Brasil, tenho conhecimento sólido em HTML5, CSS3 e JavaScript, com experiência nos principais frameworks Angular, Vue e React.
+    <br>
+    <br>
+    Fortes habilidades em Back-End com Java e Spring Boot, além de experiência com bancos de dados relacionais como Oracle, SQL Server e MySQL.
+    <br>
+    <br>
+    Possuo mais de 20 certificações em instituições renomadas, tenho projetos significativos em algumas empresas como LocaWeb, BRQ Digital Solutions, Easy Car, Microsoft e iniciativas governamentais.
+    <br>
+    <br>
+  `;
   protected descriptJobTotvs1 = `Experiência com desenvolvimento de soluções escaláveis no sistema ERP Protheus, utilizando a linguagem
           ADVPL (TOTVS).
           <br>
@@ -102,8 +126,23 @@ export class CardComponent {
     Controle e criação de acesso a técnico, através dos sistemas operacionais.
   `;
 
+  ngOnInit(): void {
+    this.updateItemsCount(window.innerWidth);
+  }
+
   constructor() {
     this.chooseJob(this.valueStep);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.updateItemsCount(event.target.innerWidth);
+  }
+
+  private updateItemsCount(width: number): void {
+    if (width <= 1100) {
+      this.orientationStepper = 'horizontal';
+    }
   }
 
   chooseJob(value: any) {

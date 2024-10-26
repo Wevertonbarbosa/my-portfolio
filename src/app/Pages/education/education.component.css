@@ -1,0 +1,17 @@
+@media (max-width: 425px) {
+  .contentImgFiap {
+    padding: 0px !important;
+  }
+
+  .contentTable {
+    padding: 0px !important;
+  }
+
+  .contentButton {
+    padding: 10px 10px !important;
+  }
+
+  .tableMaterias {
+    padding: 5px 5px !important
+  }
+}

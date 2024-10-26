@@ -20,7 +20,6 @@ import {
   TuiAlertService,
   TuiSurface,
 } from '@taiga-ui/core';
-
 import {
   TuiAvatar,
   TuiBadge,
@@ -38,7 +37,8 @@ import { CommonModule } from '@angular/common';
 import { ExperienceComponent } from '../../Pages/experience/experience.component';
 import { EvaluatedComponent } from '../../Pages/evaluated/evaluated.component';
 import { EducationComponent } from '../../Pages/education/education.component';
-import { ContactComponent } from "../../Pages/contact/contact.component";
+import { ContactComponent } from '../../Pages/contact/contact.component';
+import { TextScrollComponent } from '../text-scroll/text-scroll.component';
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -69,8 +69,9 @@ import { ContactComponent } from "../../Pages/contact/contact.component";
     ExperienceComponent,
     EvaluatedComponent,
     EducationComponent,
-    ContactComponent
-],
+    ContactComponent,
+    TextScrollComponent,
+  ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -84,6 +85,23 @@ export class MenuComponent extends TuiPortals {
   protected d = false;
   private readonly alerts = inject(TuiAlertService);
   private readonly win = inject(WA_WINDOW);
+  protected title = 'Hey, eu sou Weverton Lima!';
+  protected text = `
+  Sou um Desenvolvedor front-end e sou apaixonado pela tecnologia, meu interesse pela tecnologia se iniciou em 2021 e desde então, não parei!
+  <br>
+  <br>
+  Tenho experiência comprovada no setor de tecnologia em uma das melhores empresas de tecnologia do Brasil,
+  atuando em um ambiente altamente competitivo e inovador.
+  <b>
+  <b>
+  Tenho conhecimento sólido em HTML5, CSS3 e JavaScript, com experiência nos principais frameworks Angular,
+  Vue e
+  React.
+  <br>
+  <br>
+  Possuo fortes habilidades em Back-End com Java e Spring Boot, além de experiência com bancos de dados
+  relacionais como Oracle, SQL Server e MySQL e sempre me desafio em novas tecnologias.
+  `;
 
   constructor() {
     super();
@@ -96,6 +114,7 @@ export class MenuComponent extends TuiPortals {
   protected getDynamicLineLimit(element: HTMLDivElement): number {
     return Math.floor(element.offsetHeight / 24);
   }
+  public test = false;
 
   protected showNotification(): void {
     this.alerts

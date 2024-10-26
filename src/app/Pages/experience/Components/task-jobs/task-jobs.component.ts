@@ -4,6 +4,7 @@ import { TuiIcon, TuiSurface, TuiTitle, TuiAppearance } from '@taiga-ui/core';
 import { TuiConnected, TuiAvatar } from '@taiga-ui/kit';
 import { TuiCardMedium } from '@taiga-ui/layout';
 import { NgFor } from '@angular/common';
+import { TextScrollComponent } from "../../../../Components/text-scroll/text-scroll.component";
 
 @Component({
   selector: 'app-task-jobs',
@@ -18,7 +19,8 @@ import { NgFor } from '@angular/common';
     TuiAvatar,
     TuiAppearance,
     TuiConnected,
-  ],
+    TextScrollComponent
+],
   templateUrl: './task-jobs.component.html',
   styleUrl: './task-jobs.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

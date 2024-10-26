@@ -1,5 +1,5 @@
 <header tuiNavigationHeader class="contentHeader">
-  <span  tuiNavigationLogo>
+  <span tuiNavigationLogo>
     <a href="https://github.com/Wevertonbarbosa/Wevertonbarbosa" target="_blank" rel="noopener noreferrer">
       <tui-icon icon="@tui.github" class="fs-3 text-light iconsInfo"></tui-icon>
     </a>
@@ -21,37 +21,7 @@
 
       <hr class="mt-1 mb-1">
 
-
-      <div tuiAppearance="floating" tuiCardLarge tuiHeader class="d-flex flex-column gap-2 contentBIO">
-        <h1 tuiTitle class="p-1 greeting">
-          Hey, eu sou Weverton Lima!
-        </h1>
-        <tui-scrollbar class="box w-100">
-          <div class="content text-dark px-2 " tuiSubtitle style="-webkit-line-clamp:inherit;">
-            <p class="textMedium resumo text-body-secondary">
-              Sou um Desenvolvedor front-end e sou apaixonado pela tecnologia, meu interesse pela tecnologia se iniciou
-              em
-              2021 e desde então, não parei!
-              <br>
-              <br>
-              Tenho experiência comprovada no setor de tecnologia em uma das melhores empresas de tecnologia do Brasil,
-              atuando em um ambiente altamente competitivo e inovador.
-              <br>
-
-              Tenho conhecimento sólido em HTML5, CSS3 e JavaScript, com experiência nos principais frameworks Angular,
-              Vue e
-              React.
-              <br>
-              <br>
-              Possuo fortes habilidades em Back-End com Java e Spring Boot, além de experiência com bancos de dados
-              relacionais como Oracle, SQL Server e MySQL e sempre me desafio em novas tecnologias.
-            </p>
-
-          </div>
-        </tui-scrollbar>
-
-      </div>
-
+      <app-text-scroll [title]="title" [text]="text"></app-text-scroll>
 
     </h1>
   </header>
