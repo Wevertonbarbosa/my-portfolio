@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgFor } from '@angular/common';
-import { TuiSwipe } from '@taiga-ui/cdk';
+import { TuiSwipe, TuiSwipeEvent } from '@taiga-ui/cdk';
 import { TuiButton, TuiSurface } from '@taiga-ui/core';
 import { TuiCardLarge } from '@taiga-ui/layout';
 import {
@@ -174,4 +174,11 @@ export class PreviewComponent implements OnInit {
   private sanitizeUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+
+  protected swiped = 'default';
+  protected onSwipe(swipe: TuiSwipeEvent) { 
+    this.swiped = swipe.direction;
+  }
+
+
 }

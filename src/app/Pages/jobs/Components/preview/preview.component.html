@@ -1,5 +1,5 @@
-<tui-carousel [draggable]="true" [itemsCount]="itemsCount" class="p-3 contentCarousel" [(index)]="index"
-  [style.--tui-carousel-padding]="'10px'">
+<tui-carousel [draggable]="true" [itemsCount]="itemsCount" class="p-3 contentCarousel" [(index)]="index" [style.--tui-carousel-padding]="'10px'" 
+(tuiSwipe)="onSwipe(($event))">
   <ng-container *ngFor="let item of items">
     <button *tuiItem tuiCardLarge tuiSurface="floating" class="item d-flex align-items-center flex-column p-0"
       type="button">
