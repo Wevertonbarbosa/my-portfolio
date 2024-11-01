@@ -77,4 +77,8 @@ export class SlideComponent {
     this.index = (this.index + delta) % 4;
     this.returnClass();
   }
+
+  returnLengthIndex(index: any) {
+    this.returnClass();
+  }
 }

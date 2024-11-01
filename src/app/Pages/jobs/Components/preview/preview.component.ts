@@ -153,7 +153,7 @@ export class PreviewComponent implements OnInit {
   private updateItemsCount(width: number): void {
     if (width <= 768) {
       this.itemsCount = 1;
-      this.sizePagination = 's';
+      this.sizePagination = 'm';
     } else if (width <= 1024) {
       this.itemsCount = 2;
       this.sizePagination = 'm';

@@ -5,7 +5,7 @@
       <h1 tuiTitle class="fs-4">
         Classificações e recomendações
         <span tuiSubtitle class="d-flex align-items-center gap-2 w-70">
-          <tui-pulse class="pe-1 pulse"/>
+          <tui-pulse class="pe-1 pulse" />
           <b>Desenvolvedor Front-end | Desenvolvimento Web | API REST | Interfaces UX/UI | Analista de Sistemas |
             Angular, React.Js, TypeScript, JavaScript, Bootstrap | Experiência em Java, SQL Server, Oracle |</b>
         </span>
@@ -57,7 +57,7 @@
   <div class="header" [ngClass]="imgSlide">
   </div>
 </ng-template>
-<ng-template [tuiDialogOptions]="{size: 's', header: header}" [(tuiDialog)]="open">
+<ng-template [tuiDialogOptions]="{size: 'm', header: header}" [(tuiDialog)]="open">
   <div tuiCarouselButtons class="wrapper" (touchstart.passive.stop)="(0)">
     <button appearance="neutral" iconStart="@tui.chevron-left" tuiIconButton tuiTheme="dark" type="button"
       class="tui-space_right-4" (click)="navigate(-1)">
@@ -142,11 +142,11 @@
             Weverton, sempre disposto a aprender e também disposto a lhe ajudar com o que for necessário."</p>
         </div>
 
-
       </div>
 
-
     </tui-carousel>
+    
+
     <button appearance="neutral" iconStart="@tui.chevron-right" tuiIconButton tuiTheme="dark" type="button"
       class="tui-space_left-4" (click)="navigate(1)">
       Next
@@ -166,9 +166,14 @@
           <p class="paragrafoClient m-0">Qualidade</p>
           <tui-rating [max]="5" class="rating" [ngModel]="5" [readOnly]="true" />
         </div>
-
       </ng-template>
-
     </label>
+
+    <tui-pagination  size="m" class="tui-space_top-4 py-3" 
+    [length]="4" [(index)]="index" 
+    (click)="returnLengthIndex(index)" />
+
   </div>
+
+  
 </ng-template>

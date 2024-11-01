@@ -15,7 +15,7 @@
   <header tuiHeader class="mb-0">
     <h1 tuiTitle style="max-inline-size: 100% !important;" class="p-2 contentResume">
       <div tuiNavigationLogo>
-        <input tuiLike="var(--tui-status-negative)" (click)="showNotification()" type="checkbox" />
+        <input tuiLike="var(--tui-status-negative)" (click)="showNotification()" type="checkbox" [disabled]="disabledNotification" />
         <span tuiFade class="textBody titleForMe">Desenvolvedor Front-End </span>
       </div>
 

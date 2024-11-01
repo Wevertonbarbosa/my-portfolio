@@ -83,6 +83,7 @@ export class MenuComponent extends TuiPortals {
   protected b = false;
   protected c = true;
   protected d = false;
+  protected disabledNotification = false;
   private readonly alerts = inject(TuiAlertService);
   private readonly win = inject(WA_WINDOW);
   protected title = 'Hey, eu sou Weverton Lima!';
@@ -123,6 +124,8 @@ export class MenuComponent extends TuiPortals {
         appearance: 'success',
       })
       .subscribe();
+
+    this.disabledNotification = true;
   }
 
   public currentPage = 1;
