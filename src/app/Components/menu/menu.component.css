@@ -16,6 +16,17 @@
   display: flex;
 }
 
+.tabsMobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 0px;
+}
+
 @media (max-width: 768px) {
   .iconsInfo {
     font-size: 50px !important;
@@ -39,6 +50,15 @@
 
   .contentMain {
     padding: 0px 10px !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .contentMain{
+    padding-bottom: 25px !important;
+  }
+  .tabsMobile {
+    display: flex !important;
   }
 }
 

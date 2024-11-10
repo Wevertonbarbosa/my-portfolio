@@ -15,7 +15,8 @@
   <header tuiHeader class="mb-0">
     <h1 tuiTitle style="max-inline-size: 100% !important;" class="p-2 contentResume">
       <div tuiNavigationLogo>
-        <input tuiLike="var(--tui-status-negative)" (click)="showNotification()" type="checkbox" [disabled]="disabledNotification" />
+        <input tuiLike="var(--tui-status-negative)" (click)="showNotification()" type="checkbox"
+          [disabled]="disabledNotification" />
         <span tuiFade class="textBody titleForMe">Desenvolvedor Front-End </span>
       </div>
 
@@ -55,8 +56,6 @@
   </nav>
 
   <div tuiAppearance="floating" class="p-3 containerPages">
-
-
     <!-- CRIAR OS CONTEUDOS DAS PÁGINAS AQUI, COMPONENTES SEPARADOS -->
     <app-jobs *ngIf="currentPage === 1"></app-jobs>
     <app-experience *ngIf="currentPage === 2"></app-experience>
@@ -64,4 +63,6 @@
     <app-education *ngIf="currentPage === 4"></app-education>
     <app-contact *ngIf="currentPage === 5"></app-contact>
   </div>
+
 </main>
+<app-tabs-mobile style="display: none;" (changePageEvent)="changePage($event)" class="tabsMobile"></app-tabs-mobile>

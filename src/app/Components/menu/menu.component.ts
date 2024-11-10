@@ -39,6 +39,7 @@ import { EvaluatedComponent } from '../../Pages/evaluated/evaluated.component';
 import { EducationComponent } from '../../Pages/education/education.component';
 import { ContactComponent } from '../../Pages/contact/contact.component';
 import { TextScrollComponent } from '../text-scroll/text-scroll.component';
+import { TabsMobileComponent } from "../tabs-mobile/tabs-mobile.component";
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -71,7 +72,8 @@ import { TextScrollComponent } from '../text-scroll/text-scroll.component';
     EducationComponent,
     ContactComponent,
     TextScrollComponent,
-  ],
+    TabsMobileComponent
+],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
