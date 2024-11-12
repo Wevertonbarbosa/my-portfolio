@@ -54,12 +54,33 @@
 }
 
 @media (max-width: 425px) {
-  .contentMain{
+  .contentMain {
     padding-bottom: 25px !important;
   }
+
   .tabsMobile {
     display: flex !important;
   }
+
+  .desktopTabs {
+    display: none !important;
+  }
+
+  .navTabs{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px !important;
+  }
+
+  .btnProfile{
+    width: 50px;
+    height: 50px;
+  }
+
+  [tuiPin]._open>img{
+    padding: 0px !important;
+  }
+
 }
 
 @media (max-width: 375px) {

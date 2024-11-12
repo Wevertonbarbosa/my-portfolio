@@ -63,8 +63,10 @@ export class SlideComponent {
         return (this.imgSlide = 'img2');
       case 2:
         return (this.imgSlide = 'img3');
-      default:
+      case 3:
         return (this.imgSlide = 'img4');
+      default:
+        return (this.imgSlide = 'img5');
     }
   }
 
@@ -74,7 +76,7 @@ export class SlideComponent {
   }
 
   protected navigate(delta: number): void {
-    this.index = (this.index + delta) % 4;
+    this.index = (this.index + delta) % 5;
     this.returnClass();
   }
 

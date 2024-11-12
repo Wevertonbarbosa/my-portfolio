@@ -144,8 +144,27 @@
 
       </div>
 
+      <div *tuiItem class="contentFeedback">
+        <button tuiCardLarge tuiHeader class="w-100 px-3 py-1" tuiSurface="floating" type="button">
+          <h1 tuiTitle>
+            Eduardo Sach
+            <span tuiSubtitle>Cliente</span>
+          </h1>
+
+          <aside tuiAccessories>
+            <tui-avatar appearance="success" src="@tui.user-round-check" />
+          </aside>
+
+        </button>
+
+        <div class="container-fluid textBody paragrafoClient">
+          <p>"Gostei do trabalho do Weverton, sempre muito atencioso e prestativo a me ajudar."</p>
+        </div>
+
+      </div>
+
     </tui-carousel>
-    
+
 
     <button appearance="neutral" iconStart="@tui.chevron-right" tuiIconButton tuiTheme="dark" type="button"
       class="tui-space_left-4" (click)="navigate(1)">
@@ -169,11 +188,10 @@
       </ng-template>
     </label>
 
-    <tui-pagination  size="m" class="tui-space_top-4 py-3" 
-    [length]="4" [(index)]="index" 
-    (click)="returnLengthIndex(index)" />
+    <tui-pagination size="m" class="tui-space_top-4 py-3" [length]="5" [(index)]="index"
+      (click)="returnLengthIndex(index)" />
 
   </div>
 
-  
+
 </ng-template>

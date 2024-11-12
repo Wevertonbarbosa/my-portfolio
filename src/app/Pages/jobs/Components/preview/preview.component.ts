@@ -61,7 +61,7 @@ export class PreviewComponent implements OnInit {
   protected value = [];
 
   ngOnInit(): void {
-    this.updateItemsCount(window.innerWidth); 
+    this.updateItemsCount(window.innerWidth);
   }
   constructor(private sanitizer: DomSanitizer) {
     this.items = [
@@ -69,6 +69,13 @@ export class PreviewComponent implements OnInit {
         title: 'Landing Page Simulador de Pix',
         content: this.sanitizeUrl(
           'https://www.behance.net/embed/project/210555087?ilo0=1'
+        ),
+        note: this.value,
+      },
+      {
+        title: 'Finanças Fácil',
+        content: this.sanitizeUrl(
+          'https://www.behance.net/embed/project/211775871?ilo0=1'
         ),
         note: this.value,
       },
@@ -176,9 +183,7 @@ export class PreviewComponent implements OnInit {
   }
 
   protected swiped = 'default';
-  protected onSwipe(swipe: TuiSwipeEvent) { 
+  protected onSwipe(swipe: TuiSwipeEvent) {
     this.swiped = swipe.direction;
   }
-
-
 }

@@ -27,9 +27,9 @@
     </h1>
   </header>
 
-  <nav tuiNavigationNav class="p-3 pb-0" [style.position]="'sticky'" style="overflow: visible;"
+  <nav tuiNavigationNav class="p-3 pb-0 navTabs" [style.position]="'sticky'" style="overflow: visible;"
     tuiAppearance="floating">
-    <tui-tabs>
+    <tui-tabs class="desktopTabs">
       <button tuiTab type="button" (click)="changePage(1)">
         Meus trabalhos
       </button>
@@ -47,9 +47,9 @@
       </button>
 
     </tui-tabs>
-    <hr />
+    <hr class="desktopTabs" />
 
-    <button tuiPin type="button" style="transform: translate(0%, 0%) !important;" [open]="a" (click)="a = !a">
+    <button tuiPin type="button" class="btnProfile" style="transform: translate(0%, 0%) !important;" [open]="a" (click)="a = !a">
       <img alt="avatar"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZa92p4RTJNohjlsocpeVGkmH4IiQ5JmK7RQ&s" />
     </button>
