@@ -80,6 +80,13 @@ export class PreviewComponent implements OnInit {
         note: this.value,
       },
       {
+        title: 'Portfólio Pessoal',
+        content: this.sanitizeUrl(
+          'https://www.behance.net/embed/project/212378499?ilo0=1'
+        ),
+        note: this.value,
+      },
+      {
         title: 'Formulário Emitente',
         content: this.sanitizeUrl(
           'https://www.behance.net/embed/project/208060083?ilo0=1'
